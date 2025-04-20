@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import ThemeInitializer from "@/components/theme&effects/ThemeInitializer";
+import MouseShadow from "@/components/theme&effects/MouseShadow";
+import Navigation from "@/components/Navigation";
 
+//fonts
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -23,12 +27,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
-    <html lang="en">
+    <html lang="en ">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-black bg-white`}
       >
-        {children}
+      <ThemeInitializer/>
+      <MouseShadow/>
+        <div className={"flex flex-col justify-center items-center"}>
+            <Navigation/>
+            {children}
+        </div>
       </body>
     </html>
   );
