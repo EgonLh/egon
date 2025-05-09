@@ -1,8 +1,9 @@
 import ThemeToggle from '@/components/theme&effects/ThemeToggle'
+import Intro from "@/components/introduction/Intro";
 
 export default function Home() {
-    return (<div className=" dark:text-white container">
-        I'm theme-aware and fade nicely! <ThemeToggle/>
+    return (<div className="container p-3 ">
 
+        <Intro/>
     </div>)
 }

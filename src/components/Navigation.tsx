@@ -64,7 +64,7 @@ const menuItems = [
     },
 ];
 const mobileMenu = [
-    {label:"About"},{label:"Skill"},{label:"Education"},{label:"Contact"}
+    {label: "About"}, {label: "Skill"}, {label: "Education"}, {label: "Contact"}
 ]
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
@@ -73,59 +73,63 @@ export default function Navigation() {
         setIsOpen(!isOpen);
     };
     const isMobile = useIsMobile();
-    return (<div className={" p-3 flex justify-between container "}>
-            <div
-                className="dark:bg-gray-800 flex items-center border rounded font-mono w-12 h-13 p-1 flex justify-center items-center">
-                <img
-                    src="/assets/profile.png"
-                    alt="Profile"
-                    className="w-full h-full object-cover rounded"
-                />
-            </div>
-            {isMobile?<div>
-                <Menubar className={"dark:border-gray-600 dark:bg-gray-800 "}>
-                    <MenubarMenu>
-                        <MenubarTrigger
-                            className={"p-1 text-gray-500 transition-all duration-300 hover:text-gray-800 transition-all duration-300 ease-in-out"} onClick={handleToggle}>
-                            {isOpen ? (
-                                <XIcon className="w-7 h-7  transition-all duration-300 ease-in-out" />
-                            ) : (
-                                <PlusIcon className="w-7 h-7  transition-all duration-300 ease-in-out" />
-                            )}
-                        </MenubarTrigger>
-                        <MenubarContent>
-                            {mobileMenu.map((item,id) =>(
-                                <MenubarItem key={id} className={"text-gray-300 transition-all duration-200 hover:text-gray-900"}>{item.label}</MenubarItem>
-                            ))}
-                            <MenubarItem className={"flex justify-end"}><ThemeToggle type={"text"}/> </MenubarItem>
-                        </MenubarContent>
-                    </MenubarMenu>
-                </Menubar>
-                </div>:
-            <>
-                <div>
-                    <Menubar className={"dark:border-gray-600 dark:bg-gray-800 "}>
-                        {menuItems.map((menu, i) => (
-                            <MenubarMenu key={i}>
+    return (<div className={"container mx-auto sticky sticky top-0"}>
+            <div className={" p-3 flex    justify-between  my-3  lg:m-0 "}>
+                <div
+                    className="flex md:hidden items-center border rounded font-mono w-12 h-13 p-1 flex justify-center items-center bg-emerald-50">
+                    <img
+                        src="/assets/profile.png"
+                        alt="Profile"
+                        className="w-full h-full object-contain rounded"
+                    />
+                </div>
+                {isMobile ? <div>
+                        <Menubar className={"dark:border-gray-600 dark:bg-gray-800 "}>
+                            <MenubarMenu>
                                 <MenubarTrigger
-                                    className={"py-2 text-gray-500 transition-all duration-300 hover:text-gray-800"}>{menu.label}</MenubarTrigger>
-                                <MenubarContent>
-                                    {menu.content.map((item, j) =>
-                                        item.type === "separator" ? (
-                                            <MenubarSeparator key={j}/>
-                                        ) : (
-                                            <MenubarItem key={j}>{item.label}</MenubarItem>
-                                        )
+                                    className={"p-1 text-gray-500 transition-all duration-300 hover:text-gray-800 transition-all duration-300 ease-in-out"}
+                                    onClick={handleToggle}>
+                                    {isOpen ? (
+                                        <XIcon className="w-7 h-7  transition-all duration-300 ease-in-out"/>
+                                    ) : (
+                                        <PlusIcon className="w-7 h-7  transition-all duration-300 ease-in-out"/>
                                     )}
+                                </MenubarTrigger>
+                                <MenubarContent>
+                                    {mobileMenu.map((item, id) => (
+                                        <MenubarItem key={id}
+                                                     className={"text-gray-300 transition-all duration-200 hover:text-gray-900"}>{item.label}</MenubarItem>
+                                    ))}
+                                    <MenubarItem className={"flex justify-end"}><ThemeToggle type={"text"}/> </MenubarItem>
                                 </MenubarContent>
                             </MenubarMenu>
-                        ))}
-                    </Menubar>
-                </div>
-                <div>
-                    <ThemeToggle/>
-                </div>
-            </>}
+                        </Menubar>
+                    </div> :
+                    <>
+                        <div>
+                            <Menubar className={"dark:border-gray-600 dark:bg-gray-800 "}>
+                                {menuItems.map((menu, i) => (
+                                    <MenubarMenu key={i}>
+                                        <MenubarTrigger
+                                            className={"py-2 text-gray-500 transition-all duration-300 hover:text-gray-800"}>{menu.label}</MenubarTrigger>
+                                        <MenubarContent>
+                                            {menu.content.map((item, j) =>
+                                                item.type === "separator" ? (
+                                                    <MenubarSeparator key={j}/>
+                                                ) : (
+                                                    <MenubarItem key={j}>{item.label}</MenubarItem>
+                                                )
+                                            )}
+                                        </MenubarContent>
+                                    </MenubarMenu>
+                                ))}
+                            </Menubar>
+                        </div>
+                        <div>
+                            <ThemeToggle/>
+                        </div>
+                    </>}
+            </div>
         </div>
     )
 }
