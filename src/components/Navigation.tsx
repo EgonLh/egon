@@ -72,17 +72,20 @@ export default function Navigation() {
     const handleToggle = () => {
         setIsOpen(!isOpen);
     };
+    const handleRefresh = () => {
+        window.location.reload();
+    };
     const isMobile = useIsMobile();
     return (<div className={"container mx-auto sticky sticky top-0"}>
             <div className={" p-3 flex    justify-between  my-3  lg:m-0 "}>
-                <div
-                    className="flex md:hidden items-center border rounded font-mono w-12 h-13 p-1 flex justify-center items-center bg-emerald-50">
+                <button onClick={handleRefresh}
+                    className=" md:flex items-center border rounded font-mono w-12 h-13 p-1 flex justify-center items-center bg-emerald-50">
                     <img
                         src="/assets/profile.png"
                         alt="Profile"
-                        className="w-full h-full object-contain rounded"
+                        className="w-full h-full object-contain rounded "
                     />
-                </div>
+                </button>
                 {isMobile ? <div>
                         <Menubar className={"dark:border-gray-600 dark:bg-gray-800 "}>
                             <MenubarMenu>
@@ -106,7 +109,7 @@ export default function Navigation() {
                         </Menubar>
                     </div> :
                     <>
-                        <div>
+                        <div className={"hidden md:flex "}>
                             <Menubar className={"dark:border-gray-600 dark:bg-gray-800 "}>
                                 {menuItems.map((menu, i) => (
                                     <MenubarMenu key={i}>

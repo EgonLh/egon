@@ -7,6 +7,25 @@
     text-wrap: balance;
   }
 }
+.marquee-container {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  width: fit-content; /* Ensures the container fits the content */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%); /* Move exactly 1/3 of the way since we have 3 copies */
+  }
+}
+
+/* Pause animation on hover */
+.marquee-wrapper:hover .marquee-container {
+  animation-play-state: paused;
+}
 
 body {
   cursor: none !important;

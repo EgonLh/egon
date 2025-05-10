@@ -5,6 +5,7 @@ import ThemeInitializer from "@/components/theme&effects/ThemeInitializer";
 import MouseShadow from "@/components/theme&effects/MouseShadow";
 import Navigation from "@/components/Navigation";
 import { Ubuntu_Mono } from "next/font/google";
+import Footer from "@/components/Footer";
 //fonts
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,9 +40,10 @@ export default function RootLayout({
       >
       <ThemeInitializer/>
       <MouseShadow/>
-        <div className={"flex flex-col justify-center items-center"}>
+        <div className={"flex flex-col justify-center items-center border"}>
             <Navigation/>
             {children}
+            <Footer/>
         </div>
       </body>
     </html>
