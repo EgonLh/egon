@@ -42,3 +42,4 @@ const CopyEmailButton: React.FC<CopyEmailButtonProps> = ({
 };
 
 export default CopyEmailButton;
+    

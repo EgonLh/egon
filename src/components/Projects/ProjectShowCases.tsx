@@ -136,7 +136,7 @@ const AIProjects = [
     {
         title: "AI Project 3",
         description:
-            "Deep Learning project predicting stock prices using LSTM models, with visualization dashboards built in Streamlit.",
+            "Deep Learning projects predicting stock prices using LSTM models, with visualization dashboards built in Streamlit.",
         tag: ["Deep Learning", "LSTM", "Finance AI", "Streamlit"],
         readMore: "https://github.com/streamlit/streamlit",
         date: "March 5, 2024",
