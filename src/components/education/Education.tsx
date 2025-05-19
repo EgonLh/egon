@@ -2,24 +2,19 @@
 
 import * as LucideIcons from "lucide-react"
 import {
-    Activity,
     AppWindow,
-    Book,
-    Circle,
     CpuIcon,
-    FileIcon,
     FileTerminal,
     GraduationCapIcon,
-    School
 } from "lucide-react";
 import React from "react";
 
 export default function EducationShowCase(){
     return (<div className={"my-4 w-full"}>
         <div className={"text-4xl"}>Education</div>
-        <div className={"text-xl"}>My Education Milestones From eee.safe ewr asdfe aerw sfeferh All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order.</div>
-        <div className={"text-xs"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium amet aperiam cupiditate dignissimos ea exercitationem, facilis fuga hic ipsa iusto labore maxime, nostrum officia quaerat repudiandae sunt temporibus unde?
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequatur dignissimos dolor doloremque dolorum eaque esse et excepturi, illo ipsam iusto necessitatibus nisi pariatur, placeat praesentium quibusdam, tempore veritatis. Mollitia!
+        <div className={"text-xl"}>My education journey is a reflection of resilience, curiosity, and a constant drive to grow beyond limitations.</div>
+        <div className={"text-xs"}>
+            I earned my HNC and HND in Software Engineering, where I explored databases, networking, and software development. This journey continued with a BSc in Computing from the University of Greenwich, a milestone that strengthened my problem-solving mindset and technical confidence.
         </div>
 
         <div className={"border  my-9 flex justify-center"}>
@@ -74,7 +69,7 @@ const VerticalTimeline = () => {
     ]
 
     return (
-        <div className=" mx-auto p-6 relative ">
+        <div className=" mx-auto p-6 relative " id={"journey"}>
 
             {/* Continuous vertical line */}
             <div className="absolute left-[0px] top-0 bottom-0 w-[2px]  border bg-black border-gray-600  border-t-3 hover:border-dashed  " />

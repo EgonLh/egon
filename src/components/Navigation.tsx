@@ -11,26 +11,24 @@ import ThemeToggle from "@/components/theme&effects/ThemeToggle";
 import useIsMobile from "@/hook/IsMobile";
 import {useState} from "react";
 import {PlusIcon, XIcon} from "lucide-react";
-
+const baseURL = typeof window !== "undefined" ? window.location.origin : "";
 const menuItems = [
     {
         label: "About",
         content: [
-            {type: "item", label: "Intro"},
-            {type: "item", label: "Social Media"},
+            {type: "item", label: "About me",link: `/about`},
             {type: "separator"},
-            {type: "item", label: "Contact"},
-            {type: "item", label: "Resume / CV"},
+            {type: "item", label: "Resume / CV",link: `/about/#CV`},
         ],
     },
     {
         label: "Education",
         content: [
-            {type: "item", label: "HNC (Pearson) in Software Engineering"},
-            {type: "item", label: "HND in Software Engineering"},
-            {type: "item", label: "BSc in Computing – University of Greenwich"},
+            {type: "item", label: "HNC (Pearson) in Software Engineering",link: `/education#journey`},
+            {type: "item", label: "HND in Software Engineering",link: `/education/#journey`},
             {type: "separator"},
-            {type: "item", label: "Certifications"},
+            {type: "item", label: "BSc in Computing – University of Greenwich",link: `/education#journey`},
+
         ],
     },
     {
@@ -56,7 +54,10 @@ const menuItems = [
     },
 ];
 const mobileMenu = [
-    {label: "About"}, {label: "Skill"}, {label: "Education"}, {label: "Contact"}
+    {label: "About",link: `/about`},
+    {label: "Skill",link: `/skills`},
+    {label: "Education",link: `/education`},
+    {label: "Project",link: `/projects`}
 ]
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
@@ -72,11 +73,13 @@ export default function Navigation() {
             <div className={" p-3 flex    justify-between  my-3  lg:m-0 "}>
                 <button onClick={handleRefresh}
                     className=" md:flex items-center border rounded font-mono w-12 h-13 p-1 flex justify-center items-center bg-emerald-50">
+                    <a href={"/"}>
                     <img
                         src="/assets/my-face.png"
                         alt="Profile"
                         className="w-full h-full object-contain rounded "
                     />
+                    </a>
                 </button>
                 {/*--mobile and laptop menus*/}
                 {isMobile ? <div>
@@ -95,7 +98,9 @@ export default function Navigation() {
                                 <MenubarContent className={"dark:bg-gray-800/[0.5] bg-white/[0.8]"}>
                                     {mobileMenu.map((item, id) => (
                                         <MenubarItem key={id}
-                                                     className={"text-gray-300 transition-all duration-200 hover:text-gray-900"}>{item.label}</MenubarItem>
+                                                     className={"text-gray-300 transition-all duration-200 hover:text-gray-900"}>
+                                            <a href={item?.link}>{item.label}</a>
+                                       </MenubarItem>
                                     ))}
                                     <MenubarItem className={"flex justify-start"}><ThemeToggle type={"text"}/> </MenubarItem>
                                 </MenubarContent>
@@ -115,7 +120,9 @@ export default function Navigation() {
                                                 item.type === "separator" ? (
                                                     <MenubarSeparator key={j}/>
                                                 ) : (
-                                                    <MenubarItem key={j}>{item.label}</MenubarItem>
+                                                    <MenubarItem key={j}>
+                                                        <a href={item?.link}>{item.label}</a>
+                                                    </MenubarItem>
                                                 )
                                             )}
                                         </MenubarContent>

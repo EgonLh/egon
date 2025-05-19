@@ -4,22 +4,23 @@ export default function Footer(){
     const navItem =  [
         {
             title : "About",
-            ref : "/About"
-        },
-        {
-            title : "Projects",
-            ref :"/Projects"
+            ref : "/about"
         },
         {
             title : "Education",
-            ref :"/Education"
+            ref :"/education"
         },
         {
+            title : "Projects",
+            ref :"/projects"
+        },
+
+        {
             title:"Skill",
-            ref:"/Skill"
+            ref:"/skill"
         }
     ]
-    return (<div className={"border-t-2 w-full container mt-8 sticky button-0 rounded "}>
+    return (<div className={"border-t-2 w-full container mt-8 sticky button-0  "}>
         <div className={"flex md:justify-between justify-center p-4 py-10 "}>
             <div className={"flex text-center "}>
                 {navItem.map((item,index)=> (
