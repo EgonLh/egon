@@ -9,12 +9,11 @@ const ContactForm = () => {
     const [isSent, setIsSent] = useState(false);
     const [loading, setLoading] = useState(false);
 
+    // -- sending email -- //
     const sendEmail = (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-
         if (!formRef.current) return;
-
         emailjs
             .sendForm(
                 'service_baipz88',
@@ -35,15 +34,17 @@ const ContactForm = () => {
             );
     };
 
+    // -- cleaning up the msg -- //
     useEffect(() => {
         if (isSent) {
             const timer = setTimeout(() => setIsSent(false), 800);
-            return () => clearTimeout(timer); // Cleanup
+            return () => clearTimeout(timer);
         }
     }, [isSent]);
 
     return (
         <form ref={formRef} onSubmit={sendEmail} className="text-xs ">
+            {/*--inputs---*/}
             <div className="flex mb-1">
                 <div className="me-1 w-full">
                     <input
@@ -78,9 +79,9 @@ const ContactForm = () => {
                 </div>
             )}
             <div className={" w-full flex justify-center"}>
-                <div className={"  hover:mx-3 mx-1 transition-all duration-300 rounded border p-1 flex items-center"}><Github className={"size-3  me-1  text-gray-500 hover:text-black"}/><p className={"text-gray-500 hover:text-black font-mono"}>Github</p></div>
-                <div className={"  hover:mx-3 mx-1 transition-all duration-300 rounded border  p-1 flex items-center"}><Linkedin className={"size-3  me-1 text-gray-500 hover:text-black"}/><p className={"text-gray-500 hover:text-black font-mono"}>Linkedin</p></div>
-                <div className={"   hover:mx-3 mx-1 transition-all duration-300 rounded border  p-1 flex items-center"}><Phone className={"size-3  me-1 text-gray-500 hover:text-black"}/><p className={"text-gray-500 hover:text-black font-mono"}>Mobile</p></div>
+                <div className={"  hover:mx-3 mx-1 transition-all duration-300 rounded border p-1 flex items-center"}><Github className={"size-3  me-1  text-gray-500 "}/><p className={"text-gray-500 hover:text-black hover:dark:text-white transition-all duration-900 font-mono"}>Github</p></div>
+                <div className={"  hover:mx-3 mx-1 transition-all duration-300 rounded border  p-1 flex items-center"}><Linkedin className={"size-3  me-1 text-gray-500 "}/><p className={"text-gray-500 hover:text-black hover:dark:text-white transition-all duration-900 font-mono"}>Linkedin</p></div>
+                <div className={"   hover:mx-3 mx-1 transition-all duration-300 rounded border  p-1 flex items-center"}><Phone className={"size-3  me-1 text-gray-500 "}/><p className={"text-gray-500 hover:text-black hover:dark:text-white transition-all duration-900 font-mono"}>Mobile</p></div>
             </div>
         </form>
     );

@@ -8,10 +8,13 @@ import {
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip";
+
 export default function ProjectShowCase() {
-    const [topic, setTopic] = useState("all");
+    const [topic, setTopic] = useState("AI");
     const [projects, setProjects] = useState(AIProjects);
+
+    //--topics for project--//
     const topics = [
         {title: "Development", value: "Dev"},
         {title: "AI/ML", value: "AI-ML"},
@@ -19,9 +22,11 @@ export default function ProjectShowCase() {
         {title: "Contributing", value: "Contributing"}
     ]
 
+    //--handling filter--//
     const handleFilter = (value: string) => {
         setTopic(value);
     }
+
     useEffect(() => {
         if (topic === "AI-ML") {
             setProjects(AIProjects);
@@ -36,24 +41,16 @@ export default function ProjectShowCase() {
         }
     }, [topic]);
 
-    return (<div>
-        <div className={"grid gap-20  grid-cols-1 lg:grid-cols-3  my-3 min-h-80 "}>
+    return (<div className={"mt-40"}>
+        <div className={"grid xl:gap-20 lg:gap-10   grid-cols-1 lg:grid-cols-3  my-3 min-h-80 "}>
             <div className={"   flex flex-col lg:justify-start justify-center "}>
-                <div className="p-3">
-                    <div className="text-3xl mb-3">Projects</div>
-                    Things I’ve made trying to put my dent in the universe.
-
-                    <div className="relative">
-                        <motion.p
-                            initial={{ opacity: 0, y: 10 }} // start faded and a little lower
-                            animate={{ opacity: 1, y: 0 }}  // fade in + move up to natural position
-                            transition={{ duration: 0.8, ease: "easeOut" }} // smooth and gentle
-                        >
-                            {topic.toUpperCase()}
-                        </motion.p>
-                    </div>
+                {/*--- Topic ---*/}
+                <div className=" w-full text-justify">
+                    <div className="text-2xl text-gray-600 font-black hover:dark:text-gray-100 hover:text-black transition-all duration-300 mb-3 bg-s">🥤 Projects</div>
+                    <p className={"text-justify text-gray-600 dark:text-gray-400  hover:text-gray-800"}>A selection of projects I've built in pursuit of innovation and impact — my way of contributing to the world through technology.  Featured projects under the {topic} category.</p>
                 </div>
 
+                {/*--- Projects Filters ---*/}
                 <div className={" p-3 m-2 mb-4 rounded border  relative overflow-hidden "}>
                     <div className="absolute inset-0
                             bg-[radial-gradient(#a1a1aa_1.5px,transparent_0.5px)] bg-[size:20px_20px]
@@ -87,25 +84,32 @@ export default function ProjectShowCase() {
                 </div>
             </div>
             <div className={"col-span-2 flex  justify-between flex-col items-end "}>
+                {/*---projects filters---*/}
                 {projects.map((project, idx) => (<ProjectShowCaseItem key={project.title + idx} data={project}/>))}
             </div>
-
         </div>
-        <div className={"text-xs text-blue-300"}><Link href={"#"} className={"flex justify-end items-center "}>See Detail <ChevronRight
-            className={"size-3 ms-1 hover:ms-3 transition-all duration-300"}/></Link></div>
+
+        {/*---see more ---*/}
+        <div className={"text-xs text-blue-300"}>
+            <Link href={"#"} className={"flex justify-end items-center "}>See Detail
+                <ChevronRight className={"size-3 ms-1 hover:ms-3 transition-all duration-300"}/>
+            </Link>
+        </div>
     </div>)
 }
 
 const ProjectShowCaseItem = ({data}) => {
     return (
-
         <motion.div
             initial={{opacity: 0, y: 0}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 1}}
-            className={" border rounded w-75 mb-4 ms-8 w-full p-5 text-gray-400 hover:dark:bg-gray-800/[0.5] hover:bg-gray-100/[0.5] transition-all duration-500"}>
+            className={" border rounded w-75 mb-4 ms-8  w-full p-5 text-gray-400 hover:dark:bg-gray-800/[0.5] hover:bg-gray-100/[0.5] transition-all duration-500"}>
+            {/*---date---*/}
             <div className={" border-l-4  ps-3"}>{data.date}</div>
+            {/*---title---*/}
             <div className={"text-lg font-bold my-3 text-black dark:text-white"}>{data.title}</div>
+            {/*---info---*/}
             <div className={"text-justify"}>
                 {data.description}
             </div>

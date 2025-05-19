@@ -36,13 +36,13 @@ export default function RootLayout({
   return (
     <html lang="en ">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${ubuntuMono.variable} antialiased dark:bg-black bg-white`}
+        className={`${geistSans.variable} ${geistMono.variable} ${ubuntuMono.variable} antialiased  `}
       >
       <ThemeInitializer/>
       <MouseShadow/>
-        <div className={"flex flex-col justify-center items-center border"}>
+        <div className={"flex flex-col justify-center items-center "}>
             <Navigation/>
-            {children}
+                {children}
             <Footer/>
         </div>
       </body>

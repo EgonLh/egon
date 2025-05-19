@@ -49,7 +49,9 @@ const config: Config = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			'dark-medium': '#18181b',
+			'dark-thin': '#c6c6cd',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -64,6 +66,7 @@ const config: Config = {
 		animation: {
 			float: 'float 1s ease-in-out infinite',
 		},
+
   	}
   },
   plugins: [require("tailwindcss-animate")],

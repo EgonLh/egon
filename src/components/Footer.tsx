@@ -19,14 +19,14 @@ export default function Footer(){
             ref:"/Skill"
         }
     ]
-    return (<div className={"border-t-2 w-full container mt-8 sticky button-0 rounded dark:bg-gray-900"}>
-        <div className={"flex justify-between p-4 py-10 "}>
-            <div className={"flex"}>
+    return (<div className={"border-t-2 w-full container mt-8 sticky button-0 rounded "}>
+        <div className={"flex md:justify-between justify-center p-4 py-10 "}>
+            <div className={"flex text-center "}>
                 {navItem.map((item,index)=> (
-                    <Link href={item.ref} key={item.title+index} className={"me-8 hover:text-gray-900 text-gray-700 transition-all duration-400"}>{item.title}</Link>
+                    <Link href={item.ref} key={item.title+index} className={"md:me-4 mx-2 hover:text-gray-900  hover:dark:text-gray-100 text-gray-700 transition-all duration-400"}>{item.title}</Link>
                 ))}
             </div>
-            <div>© 2025 Spencer Sharp. All rights reserved.</div>
+            <div className={"hidden md:flex"}>2025 All rights reserved. @Egon</div>
         </div>
     </div>)
 }

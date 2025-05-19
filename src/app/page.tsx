@@ -1,16 +1,15 @@
-// import ThemeToggle from '@/components/theme&effects/ThemeToggle'
-import Intro from "@/components/introduction/Intro";
-import Section from "@/components/education/Section";
-import ScrollMarqueeCenter from "@/components/theme&effects/Marque";
+import Introduction from "@/components/introduction/Introduction";
+import PersonalInformation from "@/components/education/PersonalInformation";
+import TopicMarquee from "@/components/theme&effects/Marquee";
 import ProjectShowCase from "@/components/Projects/ProjectShowCases";
-import Contact from "@/components/contactme/Contactme";
+import ContactMe from "@/components/contactme/Contactme";
 
 export default function Home() {
-    return (<div className="container p-3  2xl:border rounded">
-        <Intro/>
-        <ScrollMarqueeCenter/>
-        <Section/>
-        <ProjectShowCase/>
-        <Contact/>
+    return (<div className="container p-3 rounded 2xl:px-9 [@media(min-width:1600px)]:px-3  ">
+           <Introduction/>
+           <TopicMarquee/>
+           <PersonalInformation/>
+           <ProjectShowCase/>
+           <ContactMe/>
     </div>)
 }
