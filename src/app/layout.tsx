@@ -5,7 +5,7 @@ import ThemeInitializer from "@/components/theme&effects/ThemeInitializer";
 import MouseShadow from "@/components/theme&effects/MouseShadow";
 import Navigation from "@/components/Navigation";
 import { Ubuntu_Mono } from "next/font/google";
-import Footer from "@/components/Footer";
+import Footer from "@/components/Footer"
 //fonts
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,7 +23,7 @@ const ubuntuMono = Ubuntu_Mono({
     variable: "--font-ubuntu-mono",
 });
 export const metadata: Metadata = {
-  title: "Zay Yar Htun",
+  title: "Egon",
   description: "Egon's Portfolio",
 };
 
