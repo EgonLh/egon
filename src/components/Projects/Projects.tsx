@@ -30,7 +30,7 @@ const DevProjects = [
         title: "SoundScape",
         description:
             "REST API powering the full-stack SoundScape app, enabling seamless data communication between frontend and backend with scalable endpoints.",
-        tag: ["Next.js", "Stripe", "TailwindCSS", "Fullstack"],
+        tag: ["JavaScript", "Express.js", "JWT"],
         readMore: "https://github.com/EgonLh/soundScape",
         date: "May 1, 2024",
     },
@@ -39,8 +39,8 @@ const DevProjects = [
         title: "API for Learning Management System (LMS)",
         description:
             "RESTful API built with Node.js and Express.js, integrated with MongoDB Atlas and deployed on Vercel for scalable backend services.",
-        tag: ["Node.js", "WebSocket", "Markdown", "Real-time"],
-        readMore: "https://socket.io/",
+        tag: ["JavaScript", "Express.js", "JWT"],
+        readMore: "https://github.com/EgonLh/soundScape",
         date: "April 15, 2024",
     },
 ]
@@ -60,7 +60,7 @@ const AcademicProjects = [
         title: "PayKey",
         description:
             "My first website built with Bootstrap, JavaScript, and PHP, incorporating essential safety measures for basic security.",
-        tag: ["Cryptography", "Secure Messaging", "Research Survey"],
+        readMore: "https://github.com/EgonLh/PayKey-Billing-Website",
         date: "April 12, 2024",
     },
 ]
@@ -71,6 +71,7 @@ const LearningLog = [
         description:
             "A deep dive into JavaScript and its ecosystem — exploring Next.js, React, Express, and TypeScript to build powerful, modern web applications.",
         date: "May 5, 2024",
+        readMore: "https://github.com/EgonLh/SWEJourney",
     },
     {
         icon:"🏁",
@@ -78,6 +79,7 @@ const LearningLog = [
         description:
             "A dedicated 30-day coding challenge tackling algorithms and data structures on Codewars and LeetCode — sharpening problem-solving skills daily.",
         date: "April 12, 2024",
+        readMore: "https://github.com/EgonLh/grinding-Leetcode-and-Codewar",
     },
 ]
 export default function Projects(){

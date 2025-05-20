@@ -19,7 +19,7 @@ export default function ProjectShowCase() {
         {title: "Development", value: "Dev"},
         {title: "AI/ML", value: "AI-ML"},
         {title: "Academic", value: "Academic"},
-        {title: "Contributing", value: "Contributing"}
+        {title: "LearningLogs", value: "LearningLog"}
     ]
 
     //--handling filter--//
@@ -34,8 +34,8 @@ export default function ProjectShowCase() {
             setProjects(DevProjects);
         } else if (topic === "Academic") {
             setProjects(AcademicProjects);
-        } else if (topic === "Contributing") {
-            setProjects(Contribution);
+        } else if (topic === "LearningLog") {
+            setProjects(LearningLog);
         } else {
             setProjects([...AIProjects]);
         }
@@ -91,7 +91,7 @@ export default function ProjectShowCase() {
 
         {/*---see more ---*/}
         <div className={"text-xs text-blue-300"}>
-            <Link href={"#"} className={"flex justify-end items-center "}>See Detail
+            <Link href={"/projects"} className={"flex justify-end items-center "}>See Detail
                 <ChevronRight className={"size-3 ms-1 hover:ms-3 transition-all duration-300"}/>
             </Link>
         </div>
@@ -114,7 +114,7 @@ const ProjectShowCaseItem = ({data}) => {
                 {data.description}
             </div>
             <div className={"flex"}>{
-                (data.tag).map(tech => (<div
+                (data?.tag)?.map(tech => (<div
                     className={"border hover:mx-3 transition-all duration-300 text-xs font-mono me-3 px-2 my-2 rounded"}>
                     {tech}
                 </div>))
@@ -130,39 +130,43 @@ const ProjectShowCaseItem = ({data}) => {
 // AI/ML Projects
 const AIProjects = [
     {
-        title: "AI Project 1",
+        title: "Music Recommendation System",
         description:
-            "Complete AI suite: pre-built modules, UI kits, SDKs, and APIs bringing top social media features to your app for effortless ecosystem building.",
-        tag: ["Python", "Pandas"],
-        readMore: "https://github.com/microsoft/api-guidelines",
+            "A recommender-based filter suggesting personalized items by analyzing user data, enhancing discovery through predictive, adaptive recommendations.",
+        readMore: "https://github.com/EgonLh/Music-Recommendation-Project",
         date: "May 22, 2024",
+        icon:"🛍️",
+        tag:["Python","Jupyter Notebook","Pandas"]
     },
     {
-        title: "AI Project 3",
+        icon : "📼",
+        title: "SoundScape WebApplication",
         description:
-            "Deep Learning projects predicting stock prices using LSTM models, with visualization dashboards built in Streamlit.",
-        tag: ["Deep Learning", "LSTM", "Finance AI", "Streamlit"],
-        readMore: "https://github.com/streamlit/streamlit",
+            "Combines OCR and AI chatbot using TS, Redux, Next.js, and Express to deliver real-time, intelligent text recognition and interaction.",
+        readMore: "https://github.com/EgonLh/soundScape-web-app",
         date: "March 5, 2024",
+        tag:["Typescript","Next.js","React.Js","Python","Tensorflow.py"]
     },
 ]
 
 // Dev (Software Development) Projects
 const DevProjects = [
     {
-        title: "Dev Project 1",
+        icon : "💿",
+        title: "SoundScape",
         description:
-            "Full-stack e-commerce website built with Next.js, Stripe integration, and TailwindCSS. Optimized for mobile and SEO.",
-        tag: ["Next.js", "Stripe", "TailwindCSS", "Fullstack"],
-        readMore: "https://github.com/vercel/next.js",
+            "REST API powering the full-stack SoundScape app, enabling seamless data communication between frontend and backend with scalable endpoints.",
+        tag: ["JavaScript", "Express.js", "JWT"],
+        readMore: "https://github.com/EgonLh/soundScape",
         date: "May 1, 2024",
     },
     {
-        title: "Dev Project 2",
+        icon : "🎒",
+        title: "API for Learning Management System (LMS)",
         description:
-            "Real-time collaborative Markdown editor using WebSockets and Node.js backend, built for study groups.",
-        tag: ["Node.js", "WebSocket", "Markdown", "Real-time"],
-        readMore: "https://socket.io/",
+            "RESTful API built with Node.js and Express.js, integrated with MongoDB Atlas and deployed on Vercel for scalable backend services.",
+        tag: ["JavaScript", "Express.js", "JWT"],
+        readMore: "https://github.com/EgonLh/soundScape",
         date: "April 15, 2024",
     },
 ]
@@ -170,39 +174,43 @@ const DevProjects = [
 // Academic Projects
 const AcademicProjects = [
     {
-        title: "Academic Project 1",
+        icon:"🎥",
+        title: "Movie Record System",
         description:
-            "Research on applying federated learning to healthcare datasets to preserve patient privacy while training global AI models.",
-        tag: ["Federated Learning", "Privacy", "Research Paper", "Healthcare AI"],
-        readMore: "https://en.wikipedia.org/wiki/Federated_learning",
+            "A movie record system with CRUD features, refactoring, file handling, structured design patterns, and best practice implementation.",
+        readMore: "https://github.com/EgonLh/MovieRecordSystem",
         date: "May 5, 2024",
+        tag:["Design Pattern","Clean Codes","Java"]
     },
     {
-        title: "Academic Project 2",
+        icon:"💳",
+        title: "PayKey",
         description:
-            "A survey and critical analysis of modern cryptographic protocols used in secure messaging apps like Signal and WhatsApp.",
-        tag: ["Cryptography", "Secure Messaging", "Research Survey"],
-        readMore: "https://signal.org/",
+            "My first website built with Bootstrap, JavaScript, and PHP, incorporating essential safety measures for basic security.",
+        tag: ["Cryptography", "MySQL", "PHP"],
         date: "April 12, 2024",
+        readMore: "https://github.com/EgonLh/PayKey-Billing-Website",
+
     },
 ]
 
-const Contribution = [
+const LearningLog = [
     {
-        title: "Contributing Project 1",
+        icon:"👨🏻‍💻",
+        title: "DevJourney",
         description:
-            "Full-stack e-commerce website built with Next.js, Stripe integration, and TailwindCSS. Optimized for mobile and SEO.",
-        tag: ["Next.js", "Stripe", "TailwindCSS", "Fullstack"],
-        readMore: "https://github.com/vercel/next.js",
-        date: "May 1, 2024",
+            "A deep dive into JavaScript and its ecosystem — exploring Next.js, React, Express, and TypeScript to build powerful, modern web applications.",
+        date: "May 5, 2024",
+        readMore: "https://github.com/EgonLh/SWEJourney",
     },
     {
-        title: "Contributing Project 2",
+        icon:"🏁",
+        title: "Grinding LeetCode",
         description:
-            "Real-time collaborative Markdown editor using WebSockets and Node.js backend, built for study groups.",
-        tag: ["Node.js", "WebSocket", "Markdown", "Real-time"],
-        readMore: "https://socket.io/",
-        date: "April 15, 2024",
+            "A dedicated 30-day coding challenge tackling algorithms and data structures on Codewars and LeetCode — sharpening problem-solving skills daily.",
+        date: "April 12, 2024",
+        tag:["Algorithm","Data Structure","JavaScript"],
+        readMore: "https://github.com/EgonLh/grinding-Leetcode-and-Codewar",
     },
 
 ]

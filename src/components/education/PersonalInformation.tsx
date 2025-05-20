@@ -125,7 +125,7 @@ export default function PersonalInformation(){
            </div>
        </div>
         <div className={"text-xs text-blue-300"}>
-            <Link href={"#"} className={"flex justify-end items-center "}>See Detail
+            <Link href={"/education"} className={"flex justify-end items-center "}>See Detail
                 <ChevronRight className={"size-3 ms-1 hover:ms-3 transition-all duration-300"}/></Link>
         </div>
 
