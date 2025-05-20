@@ -27,13 +27,17 @@ export default function MyInfo(){
                      <div className={"w-full  mt-9 rounded p-3 hidden lg:block "} id={"CV"}>
                          <p className={"dark:text-gray-300 text-gray-800"}>Want to learn more about my skills and experience?</p>
                          <div className={"my-5"}>
-                             <div className={"hover:my-3 transition-all duration-300"}>
+                             <motion.div initial={{opacity: 0, y: 20}}
+                                  animate={{opacity: 1, y: 0}}
+                                  transition={{duration: 0.8, ease: 'easeInOut'}} className={"hover:my-3 transition-all duration-300"}>
                                  <a className={"p-1 text-gray-400 hover:text-cyan-400   rounded flex"}><File className={"text-gray-800 me-2 transition-all duration-300 hover:dark:text-gray-300"}/>View My Cover Letter</a>
-                             </div>
+                             </motion.div>
 
-                            <div className={" hover:my-3 transition-all duration-300"}>
+                            <motion.div initial={{opacity: 0, y: 20}}
+                                        animate={{opacity: 1, y: 0}}
+                                        transition={{duration: 0.8, ease: 'easeInOut'}} className={" hover:my-3 transition-all duration-300"}>
                                 <a className={"p-1 text-gray-400 hover:text-cyan-400  rounded flex"}><FileTerminal className={"text-gray-800 me-2 transition-all duration-300 hover:dark:text-gray-300"}/>View My CV</a>
-                            </div>
+                            </motion.div>
 
                          </div>
                      </div>
@@ -78,13 +82,17 @@ export default function MyInfo(){
                     <Github className="size-5 text-gray-600 hover:text-emerald-500 transition-all duration-300" />
                 </div>
                 <div className={"w-full rounded mt-4 mb-24  lg:hidden flex justify-start flex-col items-start"} id={"CV"}>
-                        <div className={"hover:my-3  transition-all duration-300"}>
+                        <motion.div initial={{opacity: 0, y: 20}}
+                                    animate={{opacity: 1, y: 0}}
+                                    transition={{duration: 0.8, ease: 'easeInOut'}} className={"hover:my-3  transition-all duration-300"}>
                             <a className={" text-gray-400 hover:text-cyan-400   rounded flex"}><File className={"text-gray-800 me-2 transition-all duration-300 hover:dark:text-gray-300"}/>View My Cover Letter</a>
-                        </div>
+                        </motion.div>
 
-                        <div className={" hover:my-3 mt-3 transition-all duration-300"}>
+                        <motion.div initial={{opacity: 0, y: 20}}
+                             animate={{opacity: 1, y: 0}}
+                             transition={{duration: 0.8, ease: 'easeInOut'}} className={" hover:my-3 mt-3 transition-all duration-300"}>
                             <a className={"text-gray-400 hover:text-cyan-400  rounded flex"}><FileTerminal className={"text-gray-800 me-2 transition-all duration-300 hover:dark:text-gray-300"}/>View My CV</a>
-                        </div>
+                        </motion.div>
                 </div>
             </div>
         </div>

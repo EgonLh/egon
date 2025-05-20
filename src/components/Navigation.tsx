@@ -24,6 +24,8 @@ const menuItems = [
     {
         label: "Education",
         content: [
+            {type: "item", label: "Progress Nodes",link: `/education`},
+            {type: "separator"},
             {type: "item", label: "HNC (Pearson) in Software Engineering",link: `/education#journey`},
             {type: "item", label: "HND in Software Engineering",link: `/education/#journey`},
             {type: "separator"},
@@ -34,23 +36,30 @@ const menuItems = [
     {
         label: "Projects",
         content: [
-            {type: "item", label: "Machine Learning"},
-            {type: "item", label: "Website Development"},
-            {type: "item", label: "AI Tools / Automation"},
+            {type: "item", label: "ShowCases",link: `/projects`},
             {type: "separator"},
-            {type: "item", label: "Academic Projects"},
-            {type: "item", label: "Freelance / Side Projects"},
+            {type: "item", label: "Development",link:`/projects/#category`},
+            {type: "item", label: "AI / ML",link:`/projects/#category`},
+            {type: "item", label: "Academic Projects",link:`/projects/#category`},
+            {type: "separator"},
+            {type: "item", label: "Learning Logs",link:`/projects/#category`},
         ],
     },
     {
         label: "Skills",
         content: [
-            {type: "item", label: "Languages & Frameworks"},
-            {type: "item", label: "AI & Data Science"},
-            {type: "separator"},
-            {type: "item", label: "DevOps / MLOps"},
-            {type: "item", label: "Cloud & Infrastructure"},
-        ],
+            { type: "item", label: "Areas of Knowledge" ,link:`/skills` },
+            { type: "separator" },
+            { type: "item", label: "Programming Languages",link:`/skills/#pglang` },
+            { type: "item", label: "Frontend Frameworks & Libraries",link:`/skills/#fe` },
+            { type: "item", label: "Backend Technologies & Databases",link:`/skills/#be` },
+            { type: "separator" },
+            { type: "item", label: "Fundamental Knowledge",link:`/skills/#knowledge` },
+            { type: "separator" },
+            { type: "item", label: "Artificial Intelligence & Machine Learning",link:`/skills/#ai` },
+            { type: "item", label: "Tools",link:`/skills/#tools` }
+        ]
+        ,
     },
 ];
 const mobileMenu = [
@@ -71,8 +80,11 @@ export default function Navigation() {
     const isMobile = useIsMobile();
     return (<div className={"container mx-auto sticky sticky top-0 z-[9999]"}>
             <div className={" p-3 flex    justify-between  my-3  lg:m-0 "}>
-                <button onClick={handleRefresh}
-                    className=" md:flex items-center border rounded font-mono w-12 h-13 p-1 flex justify-center items-center bg-emerald-50">
+                <button
+                    onClick={handleRefresh}
+                    className="md:flex items-center justify-center border rounded font-mono w-12 h-13 p-1
+             bg-white/30 dark:bg-gray-200/10 backdrop-blur-md"
+                >
                     <a href={"/"}>
                     <img
                         src="/assets/my-face.png"
@@ -90,17 +102,19 @@ export default function Navigation() {
                                     className={"p-1 text-gray-500 transition-all duration-300 hover:dark:text-gray-700 transition-all duration-300 ease-in-out"}
                                     onClick={handleToggle}>
                                     {isOpen ? (
-                                        <XIcon className="w-7 h-7  transition-all duration-300 ease-in-out"/>
-                                    ) : (
                                         <PlusIcon className="w-7 h-7  transition-all duration-300 ease-in-out"/>
+
+                                    ) : (
+                                        <XIcon className="w-7 h-7  transition-all duration-300 ease-in-out"/>
                                     )}
                                 </MenubarTrigger>
                                 <MenubarContent className={"dark:bg-gray-800/[0.5] bg-white/[0.8]"}>
                                     {mobileMenu.map((item, id) => (
-                                        <MenubarItem key={id}
+                                        <a href={item?.link}><MenubarItem key={id}
                                                      className={"text-gray-300 transition-all duration-200 hover:text-gray-900"}>
-                                            <a href={item?.link}>{item.label}</a>
+                                            {item.label}
                                        </MenubarItem>
+                                        </a>
                                     ))}
                                     <MenubarItem className={"flex justify-start"}><ThemeToggle type={"text"}/> </MenubarItem>
                                 </MenubarContent>
@@ -110,8 +124,8 @@ export default function Navigation() {
                     <>
                         {/*--desk-size-nav--*/}
                         <div className={"hidden md:flex "}>
-                            <Menubar className={"dark:border-gray-900 dark:bg-gray-800 "}>
-                                {menuItems.map((menu, i) => (
+                            <Menubar className="dark:border-gray-900 dark:bg-gray-800 bg-white/30 dark:bg-gray-800/30 backdrop-blur-md">
+                            {menuItems.map((menu, i) => (
                                     <MenubarMenu key={i}>
                                         <MenubarTrigger
                                             className={"py-2 text-gray-500 transition-all duration-300 hover:dark:text-gray-400 hover:text-gray-800"}>{menu.label}</MenubarTrigger>
@@ -120,9 +134,11 @@ export default function Navigation() {
                                                 item.type === "separator" ? (
                                                     <MenubarSeparator key={j}/>
                                                 ) : (
+                                                    <a href={item?.link}>
                                                     <MenubarItem key={j}>
-                                                        <a href={item?.link}>{item.label}</a>
+                                                       {item.label}
                                                     </MenubarItem>
+                                                    </a>
                                                 )
                                             )}
                                         </MenubarContent>

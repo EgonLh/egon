@@ -17,7 +17,7 @@ export default function Footer(){
 
         {
             title:"Skill",
-            ref:"/skill"
+            ref:"/skills"
         }
     ]
     return (<div className={"border-t-2 w-full container mt-8 sticky button-0  "}>
