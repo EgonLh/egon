@@ -4,26 +4,66 @@ import React from "react";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import {motion} from "framer-motion";
 
+// --- Journey --- //
+const educationJourney = [
+    {
+        date: "June 2022",
+        subtitle: "The foundation",
+        title: "Higher National Certification",
+        icon: "🗃️",
+        learningStyle: "blended",
+        description:
+            "Completed foundational coursework in Software Engineering, covering programming principles, professional practices, and basic projects management. Gained hands-on experience with languages such as Java and PHP, and developed problem-solving skills through practical assignments.",
+    },
+    {
+        date: "September 2023",
+        subtitle: "The advancement",
+        title: "Higher National Diploma",
+        icon: "🎓",
+        learningStyle: "blended",
+        description:
+            "Advanced studies in Software Engineering, including data structures, algorithms, and database management. Engaged in collaborative projects emphasizing version control, Agile methodologies, and software testing to build real-world applications.",
+    },
+    {
+        date: "December 2024",
+        subtitle: "The specialization",
+        title: "Bachelor of Science (Hons)",
+        icon: "🎓",
+        learningStyle: "blended",
+        description:
+            "Pursuing a degree at the University of Greenwich, focusing on project management, software engineering, and related knowledge. Continuously expanding expertise in AI/ML with practical projects to build a career as an AI/ML engineer.",
+    },
+    {
+        date: "May 2025",
+        subtitle: "The intensive",
+        title: "DataTalk.Club",
+        icon: "⚗️",
+        learningStyle: "online",
+        description:
+            "Intensive hands-on program focused on practical Machine Learning, MLOps, and data engineering skills. Covered end-to-end ML lifecycle, including model training, deployment, monitoring, and cloud infrastructure automation.",
+    },
+]
 export default function EducationShowCase(){
     return (<div className={"my-24 w-full"}>
+        {/* -- intro -- */}
         <div className="mt-6 mb-12">
             <motion.div initial={{opacity: 0, y: 20}}
                            animate={{opacity: 1, y: 0}}
                            transition={{duration: 0.8, ease: 'easeInOut'}}
                            className="text-lg  flex items-center gap-2">
-                🧑🏻‍🎓 <span>Journey Driven by Curiosity, Resilience & Growth</span>
+                 <span className={"text-balance"}>🧑🏻‍🎓 Journey Driven by Curiosity, Resilience & Growth</span>
             </motion.div>
             <motion.div initial={{opacity: 0, y: 20}}
                         animate={{opacity: 1, y: 0}}
-                        transition={{duration: 0.8, ease: 'easeInOut'}} className="text-4xl font-bold text-emerald-500 hover:text-emerald-700 transition-colors duration-300 text-balance">
+                        transition={{duration: 0.8, ease: 'easeInOut'}} className="md:text-4xl text-3xl font-bold text-emerald-500 hover:text-emerald-700 transition-colors duration-300 text-balance">
                 Academic & Professional Learning Journey
             </motion.div>
 
             <motion.div  initial={{opacity: 0, y: 20}}
                   animate={{opacity: 1, y: 0}}
                   transition={{duration: 0.8, ease: 'easeInOut'}} className="text-sm leading-relaxed dark:text-gray-300 text-base/8 text-justify">
-                I earned my HNC and HND in Software Engineering, diving into databases, networking, and software development.<br/>
-                My journey continued with a BSc in Computing from the University of Greenwich—strengthening my problem-solving mindset and building technical confidence.
+                I earned my HNC and HND in Software Engineering, establishing a strong foundation in databases, networking, and software development principles.<br/>
+                I am currently pursuing a BSc in Computing at the University of Greenwich, strengthening my problem-solving mindset, technical skills, project management, and teamwork.
             </motion.div>
         </div>
 
@@ -60,46 +100,8 @@ export default function EducationShowCase(){
 }
 
 
+// --- timelines --- //
 const VerticalTimeline = () => {
-    const educationJourney = [
-        {
-            date: "May 2022",
-            subtitle: "The foundation",
-            title: "Higher National Certification",
-            icon: "🗃️",
-            learningStyle: "blended",
-            description:
-                "Completed foundational coursework in Software Engineering, covering programming principles, software design patterns, and basic projects management. Gained hands-on experience with languages such as Java and Python, and developed problem-solving skills through practical assignments.",
-        },
-        {
-            date: "June 2023",
-            subtitle: "The advancement",
-            title: "Higher National Diploma",
-            icon: "🎓",
-            learningStyle: "blended",
-            description:
-                "Advanced studies in Software Engineering, including data structures, algorithms, and database management. Engaged in collaborative projects emphasizing version control, Agile methodologies, and software testing to build real-world applications.",
-        },
-        {
-            date: "September 2024",
-            subtitle: "The specialization",
-            title: "Bachelor of Science (Hons)",
-            icon: "🎓",
-            learningStyle: "blended",
-            description:
-                "Specialized in Software Engineering at the University of Greenwich, focusing on systems architecture, cloud computing, and AI integration. Completed a capstone projects involving machine learning pipelines and deployed scalable applications.",
-        },
-        {
-            date: "October 2024",
-            subtitle: "The intensive",
-            title: "ZoomCamp",
-            icon: "⚗️",
-            learningStyle: "online",
-            description:
-                "Intensive hands-on program focused on practical Machine Learning, MLOps, and data engineering skills. Covered end-to-end ML lifecycle, including model training, deployment, monitoring, and cloud infrastructure automation.",
-        },
-    ]
-
     return (
         <div className=" mx-auto py-6 ps-6 md:pe-0 pe-6 relative " id={"journey"}>
 
