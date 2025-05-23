@@ -18,7 +18,7 @@ export default function MyInfo(){
                         transition={{duration: 0.8, ease: 'easeOut'}}
                         className="p-4"
                     >
-                        <img src={"/assets/my-face.png"}
+                        <img src={"/assets/my-img.png"}
                              className="w-full h-full relative z-10 object-cover"/>
 
                     </motion.div>

@@ -7,6 +7,5 @@ export default function ThemeInitializer() {
     useEffect(() => {
         initTheme()
     }, [])
-
-    return null // no UI, just initializes theme
+    return null
 }

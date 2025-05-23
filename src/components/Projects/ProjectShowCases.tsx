@@ -1,5 +1,5 @@
 "use client"
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {ChevronRight, CircleAlert} from "lucide-react";
 import Link from "next/link";
 import {motion} from "framer-motion";
@@ -22,24 +22,22 @@ export default function ProjectShowCase() {
         {title: "LearningLogs", value: "LearningLog"}
     ]
 
-    //--handling filter--//
-    const handleFilter = (value: string) => {
-        setTopic(value);
-    }
+    // -- handle changes projects -- //
+    const handleTopicChange = (newTopic: string) => {
+        setTopic(newTopic); // if you store topic in state
+        setProjects(getProjectsByTopic(newTopic));
+    };
 
-    useEffect(() => {
-        if (topic === "AI-ML") {
-            setProjects(AIProjects);
-        } else if (topic === "Dev") {
-            setProjects(DevProjects);
-        } else if (topic === "Academic") {
-            setProjects(AcademicProjects);
-        } else if (topic === "LearningLog") {
-            setProjects(LearningLog);
-        } else {
-            setProjects([...AIProjects]);
-        }
-    }, [topic]);
+    // -- get projects -- //
+    const getProjectsByTopic = (topic: string) => {
+        const topicMap: Record<string, any[]> = {
+            "AI-ML": AIProjects,
+            "Dev": DevProjects,
+            "Academic": AcademicProjects,
+            "LearningLog": LearningLog,
+        };
+        return topicMap[topic] || AIProjects;
+    };
 
     return (<div className={"mt-40"}>
         <div className={"grid xl:gap-20 lg:gap-10   grid-cols-1 lg:grid-cols-3  my-3 min-h-80 "}>
@@ -72,12 +70,12 @@ export default function ProjectShowCase() {
                         (<div className={" flex justify-center flex-col items-center  transition-all duration-300"}>
                             {index !== 0 && (
                                 <div
-                                    className={`w-px h-8 border border-t-4 border-gray-600  ${topic == item.value ? "" : "border-dashed"}`}></div>
+    className={`w-px h-8 border border-t-4 border-gray-600  ${topic == item.value ? "" : "border-dashed"}`}/>
                             )}
                             <button
                                 className={`hover:bg-zinc-100/[0.5] k animate-float  transition-all   w-2/4 p-2 rounded  ${topic == item.value ? "bg-zinc-200/[0.5] border my-3 " : "bg-transparent"}`}
                                 onClick={() => {
-                                    handleFilter(item.value)
+                                    handleTopicChange(item.value)
                                 }}>{item.title}</button>
                         </div>)
                     )}
@@ -88,7 +86,6 @@ export default function ProjectShowCase() {
                 {projects.map((project, idx) => (<ProjectShowCaseItem key={project.title + idx} data={project}/>))}
             </div>
         </div>
-
         {/*---see more ---*/}
         <div className={"text-xs text-blue-300"}>
             <Link href={"/projects"} className={"flex justify-end items-center "}>See Detail
@@ -113,7 +110,7 @@ const ProjectShowCaseItem = ({data}) => {
             <div className={"text-justify"}>
                 {data.description}
             </div>
-            <div className={"flex"}>{
+            <div className={"flex truncate "}>{
                 (data?.tag)?.map(tech => (<div
                     className={"border hover:mx-3 transition-all duration-300 text-xs font-mono me-3 px-2 my-2 rounded"}>
                     {tech}
@@ -125,7 +122,6 @@ const ProjectShowCaseItem = ({data}) => {
             </div>
         </motion.div>)
 }
-
 
 // AI/ML Projects
 const AIProjects = [
@@ -166,7 +162,7 @@ const DevProjects = [
         description:
             "RESTful API built with Node.js and Express.js, integrated with MongoDB Atlas and deployed on Vercel for scalable backend services.",
         tag: ["JavaScript", "Express.js", "JWT"],
-        readMore: "https://github.com/EgonLh/soundScape",
+        readMore: "https://github.com/EgonLh/dummyApi",
         date: "April 15, 2024",
     },
 ]
@@ -194,6 +190,7 @@ const AcademicProjects = [
     },
 ]
 
+// Learning Logs (Milestones for me)
 const LearningLog = [
     {
         icon:"👨🏻‍💻",

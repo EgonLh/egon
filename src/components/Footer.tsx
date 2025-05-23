@@ -1,25 +1,26 @@
 import Link from "next/link";
 
-export default function Footer(){
-    const navItem =  [
-        {
-            title : "About",
-            ref : "/about"
-        },
-        {
-            title : "Education",
-            ref :"/education"
-        },
-        {
-            title : "Projects",
-            ref :"/projects"
-        },
+// -- footer navigation -- //
+const navItem =  [
+    {
+        title : "About",
+        ref : "/about"
+    },
+    {
+        title : "Education",
+        ref :"/education"
+    },
+    {
+        title : "Projects",
+        ref :"/projects"
+    },
 
-        {
-            title:"Skill",
-            ref:"/skills"
-        }
-    ]
+    {
+        title:"Skill",
+        ref:"/skills"
+    }
+]
+export default function Footer(){
     return (<div className={"border-t-2 w-full container mt-8 sticky button-0  "}>
         <div className={"flex md:justify-between justify-center p-4 py-10 "}>
             <div className={"flex text-center "}>

@@ -1,3 +1,4 @@
+// -- main -- //
 import Introduction from "@/components/introduction/Introduction";
 import PersonalInformation from "@/components/education/PersonalInformation";
 import TopicMarquee from "@/components/theme&effects/Marquee";

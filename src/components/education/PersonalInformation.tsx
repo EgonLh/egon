@@ -25,14 +25,14 @@ const educationJourney = [
     },
     {
         title: "Bachelor of Science (Hons)",
-        description: "Software Engineering - University of Greenwich",
+        description: "University of Greenwich",
         date: "2024 — 2025",
         icon: GraduationCapIcon,
     },
     {
-        title: "ZoomCamp",
+        title: "DataTalks.Club",
         description: "Machine Learning, MLOps",
-        date: "2024 — ",
+        date: "2025",
         icon: Tent,
     },
 ];
@@ -46,7 +46,7 @@ const workstations = [
     },
     {
         title: "Notion",
-        description: "Second brain — notes, task manager, planning ",
+        description: "Second brain — notes, task manager, planning",
         date: "2022 — Present",
         icon: NotebookIcon,
     },
@@ -63,7 +63,7 @@ const workstations = [
         icon: NotepadText,
     },
 ];
-
+// -- personal information -- //
 export default function PersonalInformation(){
     return(<motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -93,7 +93,7 @@ export default function PersonalInformation(){
                                    <div className={"text-xl border rounded w-fit p-1"}><milestone.icon className={"size-8 dark:text-gray-400  text-gray-500   hover:size-9 transition-all duration-300"}/></div>
                                    <div className={"ms-3 text-teal-900 hover:dark:text-teal-100  transition-all duration-300"}>{milestone.title}<br/><p className={"text-xs text-gray-600"}>{milestone.description}</p></div>
                                </div>
-                               <div className={"text-xs text-gray-400"}>{milestone.date}</div>
+                               <div className={"text-xs text-gray-400 truncate"}>{milestone.date}</div>
                            </div>
                        ))}
                    </div>

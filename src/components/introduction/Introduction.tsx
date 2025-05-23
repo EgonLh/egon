@@ -1,9 +1,29 @@
 "use client"
 import CopyEmailButton from "@/components/ui/ToEmail";
 import React from "react";
-import {Facebook, Github, Linkedin, PlusCircle, Twitter} from "lucide-react";
+import {Facebook, Github, Linkedin, PlusCircle, FileText} from "lucide-react";
 import {motion} from 'framer-motion';
 import DecryptedText from "@/components/ui/DecryptedText/DecryptedText";
+
+//-- social medias --//
+const socialLink = [
+    {
+        icon:Facebook,
+        socialLink : "https://www.facebook.com/zay.yar.htun.100488?mibextid=ZbWKwL"
+    },
+    {
+        icon:Github,
+        socialLink : "https://github.com/EgonLh"
+    },
+    {
+        icon:Linkedin,
+        socialLink : "https://www.linkedin.com/in/zay-yar-htun-119822260"
+    },
+    {
+        icon:FileText,
+        socialLink : "https://www.kaggle.com/zayyarhtun0"
+    }
+]
 
 export default function Introduction() {
     return (<motion.div
@@ -30,7 +50,7 @@ export default function Introduction() {
                         transition={{duration: 0.8, ease: 'easeOut'}}
                         className="p-4"
                     >
-                        <img src={"/assets/my-face.png"}
+                        <img src={"/assets/my-img.png"}
                              className="w-full h-full relative z-10 object-cover"/>
 
                     </motion.div>
@@ -84,31 +104,36 @@ export default function Introduction() {
                             animate={{opacity: 1}}
                             transition={{delay: 0.6}}
                         >
+                            {/* --- email copy --- */}
                             <CopyEmailButton/>
 
-                            <button
+                            {/* --- cv download link */}
+                            <a
+                                href="/assets/CV/CV.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex ms-3 items-center border text-xs rounded px-2 p-1 hover:bg-gray-900 hover:dark:bg-gray-300/[0.1] hover:text-white transition-colors duration-300 ease-in-out "
                             >
-                                <PlusCircle className="w-4 me-1"/>
+                                <PlusCircle className="w-4 me-1" />
                                 Hire Me
-                            </button>
+                            </a>
+
                         </motion.div>
                     </motion.div>
                 </div>
             </div>
             {/*---My Information Detail---*/}
-            <div className={"text-justify my-8 text-base/8 text-gray-600 dark:text-gray-500 hover:text-gary-500"}>I am a self-driven aspiring AI/ML engineer and computer science enthusiast, currently pursuing a Bachelor's degree in Software Engineering. Holding a Higher National Diploma (HND) in Software Engineering, I've built a solid foundation in programming principles. My practical experience includes developing applications using JavaScript and TypeScript, and I'm actively expanding my expertise in Python, focusing on machine learning. I'm exploring MLOps practices to streamline model deployment and monitoring. Committed to continuous learning, my goal is to integrate software development and AI to create scalable solutions addressing real-world challenges effectively.</div>
+            <div className={"text-justify my-8 text-base/8 text-gray-600 dark:text-gray-500 hover:text-gary-500"}>I am a self-driven aspiring AI/ML engineer and computer science enthusiast, currently pursuing a Bachelor's degree at University of Greenwich. Holding a Higher National Diploma (HND) in Software Engineering, I've built a solid foundation in programming principles and project management practices. My practical experience includes developing applications using JavaScript and TypeScript, and I'm actively expanding my expertise in Python, focusing on machine learning. I'm also exploring the world of AI to create smarter solutions and unlock real-world impact through intelligent systems. Committed to continuous learning, I aim to integrate software development and AI to build scalable solutions for real-world challenges, while remaining open-minded, adaptable, and driven by a positive attitude.</div>
             <div className="flex my-4 space-x-3">
-                {[Facebook, Twitter, Github, Linkedin].map((Icon, idx) => (
+                {socialLink.map((item, idx) => (
                     <div
                         key={idx}
                         className="p-2 hover:px-3  hover:text-black text-gray-600 hover:border my-1  outline-2 rounded transition-all duration-300 "
                     >
-                        <Icon className="size-5  transition-all duration-300 hover:fill-black  black:fill-white dark:text-gray-200 "/>
+                        <a href={item.socialLink}><item.icon className="size-5  transition-all duration-300 hover:fill-black  black:fill-white dark:text-gray-200 "/></a>
                     </div>
                 ))}
             </div>
         </div>
-
     </motion.div>)
 }

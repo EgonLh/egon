@@ -78,10 +78,10 @@ const ContactForm = () => {
                     Message sent 🎉
                 </div>
             )}
-            <div className={" w-full flex justify-center"}>
-                <div className={"  hover:mx-3 mx-1 transition-all duration-300 rounded border p-1 flex items-center"}><Github className={"size-3  me-1  text-gray-500 "}/><p className={"text-gray-500 hover:text-black hover:dark:text-white transition-all duration-900 font-mono"}>Github</p></div>
-                <div className={"  hover:mx-3 mx-1 transition-all duration-300 rounded border  p-1 flex items-center"}><Linkedin className={"size-3  me-1 text-gray-500 "}/><p className={"text-gray-500 hover:text-black hover:dark:text-white transition-all duration-900 font-mono"}>Linkedin</p></div>
-                <div className={"   hover:mx-3 mx-1 transition-all duration-300 rounded border  p-1 flex items-center"}><Phone className={"size-3  me-1 text-gray-500 "}/><p className={"text-gray-500 hover:text-black hover:dark:text-white transition-all duration-900 font-mono"}>Mobile</p></div>
+            {/* -- social links */}
+            <div className={" w-full flex justify-center py-2"}>
+                <div className={"  hover:mx-3 mx-1 transition-all duration-300 rounded  p-1 flex items-center"}><a href={"https://github.com/EgonLh"}><Github className={"size-3   text-gray-500 "}/></a></div>
+                <div className={"  hover:mx-3 mx-1 transition-all duration-300 rounded   p-1 flex items-center"}><a href={"https://www.linkedin.com/in/zay-yar-htun-119822260"}><Linkedin className={"size-3  text-gray-500 "}/></a></div>
             </div>
         </form>
     );

@@ -1,3 +1,4 @@
+// -- theme - toggle -- //
 export const toggleTheme = (): void => {
     const html = document.documentElement
     const isDark = html.classList.toggle('dark')

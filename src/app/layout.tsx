@@ -6,7 +6,8 @@ import MouseShadow from "@/components/theme&effects/MouseShadow";
 import Navigation from "@/components/Navigation";
 import { Ubuntu_Mono } from "next/font/google";
 import Footer from "@/components/Footer"
-//fonts
+
+// -- font-customization -- //
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -22,6 +23,8 @@ const ubuntuMono = Ubuntu_Mono({
     subsets: ["latin"],
     variable: "--font-ubuntu-mono",
 });
+
+// -- adding meta -- //
 export const metadata: Metadata = {
   title: "Egon",
   description: "Egon's Portfolio",
@@ -38,11 +41,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${ubuntuMono.variable} antialiased  `}
       >
+      {/* -- theme -- */}
       <ThemeInitializer/>
+      {/* -- cursor shadow -- */}
       <MouseShadow/>
         <div className={"flex flex-col justify-center items-center "}>
+            {/* -- navigation -- */}
             <Navigation/>
                 {children}
+            {/* -- Footer -- */}
             <Footer/>
         </div>
       </body>

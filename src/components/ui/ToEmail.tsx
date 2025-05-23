@@ -13,7 +13,7 @@ const CopyEmailButton: React.FC<CopyEmailButtonProps> = ({
                                                          }) => {
     const [copied, setCopied] = useState(false);
 
-    // > handing Copy
+    // > handing Copy Here!
     const handleCopy = async () => {
         try {
             if (typeof email === "string") {
