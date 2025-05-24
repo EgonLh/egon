@@ -66,7 +66,7 @@ export default function MyInfo() {
                 </div>
             </div>
             {/* -- text about me --*/}
-            <div className="w-full  p-8 lg:pt-8 pt-0 rounded-2xl  text-justify">
+            <div className="w-full  p-8 lg:pt-8 pt-0  rounded-2xl  text-justify">
                 <motion.div initial={{opacity: 0, y: 20}}
                             animate={{opacity: 1, y: 0}}
                             transition={{duration: 0.8, ease: 'easeInOut'}}
@@ -78,7 +78,7 @@ export default function MyInfo() {
                         Engineer<br/> From Myanmar !</h1>
                 </motion.div>
 
-                <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed text-[1.05rem]">
+                <div className="space-y-4 text-gray-700 dark:text-gray-300  leading-relaxed text-[1.05rem]">
                     <p className={"indent-9"}>
                         Hi, I'm Egon — an aspiring AI/ML engineer with a solid computing background and a commitment to driving meaningful innovation.
                         I hold an HNC and HND in Software Engineering and am currently pursuing my BSc in Computing at the University of Greenwich.

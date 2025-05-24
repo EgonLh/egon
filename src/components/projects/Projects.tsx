@@ -1,9 +1,9 @@
 "use client"
 import React, {useEffect, useState} from "react";
-import {File, Link} from "lucide-react";
+import {Link} from "lucide-react";
 import {motion} from "framer-motion";
 import DecryptedText from "@/components/ui/DecryptedText/DecryptedText";
-// AI/ML Projects
+// AI/ML projects
 const AIProjects = [
     {
         title: "Music Recommendation System",
@@ -23,7 +23,7 @@ const AIProjects = [
     },
 ]
 
-// Dev (Software Development) Projects
+// Dev (Software Development) projects
 const DevProjects = [
     {
         icon : "💿",
@@ -45,7 +45,7 @@ const DevProjects = [
     },
 ]
 
-// Academic Projects
+// Academic projects
 const AcademicProjects = [
     {
         icon:"🎥",
@@ -64,6 +64,8 @@ const AcademicProjects = [
         date: "April 12, 2024",
     },
 ]
+
+// Learning Logs
 const LearningLog = [
     {
         icon:"👨🏻‍💻",
@@ -82,11 +84,13 @@ const LearningLog = [
         readMore: "https://github.com/EgonLh/grinding-Leetcode-and-Codewar",
     },
 ]
+
 export default function Projects(){
     return (<motion.div initial={{opacity: 0, y: 20}}
                         animate={{opacity: 1, y: 0}}
                         transition={{duration: 0.8, ease: 'easeInOut'}} className={" my-28 md:px-3 "}>
-        <div className=" my-10">
+        {/* -- title -- */}
+        <div className=" my-10 p-8">
             <h2 className="text-3xl md:text-4xl font-bold text-emerald-400 tracking-tight mb-2 flex">
                 <div className="relative w-10 h-10 me-3 group ">
                     <span className="absolute inset-0 rounded-full group-hover:border bg-emerald-400/[0.1] opacity-90 animate-ping group-hover:animate-none"/>
@@ -103,9 +107,9 @@ export default function Projects(){
                 Built with purpose, driven by passion — here's where theory met practice!
             </p>
 
-            <p className="text-sm md:text-base text-gray-400 text-justify indent-9 leading-relaxed">
+            <p className="text-sm md:text-base  text-gray-700  dark:text-gray-300 text-justify indent-9 leading-relaxed">
                 A glimpse into the real-world problems I’ve tackled, blending creativity, technical depth, and relentless curiosity.
-                Each project here reflects a unique challenge I embraced — from architecture to deployment. Whether it was crafting clean UI/UX, optimizing backend performance, or integrating machine learning models, I focused on building solutions that are not just functional but thoughtfully engineered.
+                Each project here reflects a unique challenge I embraced — from planning to deployment. Whether it was crafting clean UI/UX, optimizing backend performance, or integrating machine learning models, I focused on building solutions that are not just functional but thoughtfully engineered.
                 I handled everything from planning and development to testing and deployment, ensuring each project reflects both technical precision and my personal growth as an engineer.
             </p>
         </div>

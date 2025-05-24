@@ -11,7 +11,7 @@ const navItem =  [
         ref :"/education"
     },
     {
-        title : "Projects",
+        title : "projects",
         ref :"/projects"
     },
 

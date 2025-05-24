@@ -3,6 +3,7 @@
 import {motion} from "framer-motion";
 import React from "react";
 
+// -- skill showcase -- //
 const skills = [
     {
         topic: "Languages",
@@ -53,25 +54,11 @@ const skills = [
         _id:"be"
     },
     {
-        topic: "Fundamental Knowledge",
-        skills: [
-            {
-                name: "🧱 Object-Oriented Programming (OOP)",
-                description: "Built a strong foundation in OOP by applying core principles like encapsulation, inheritance, polymorphism, and abstraction in real projects. Focused on writing clean, modular, and maintainable code—especially in JavaScript and Python—to structure scalable applications."
-            },
-            {
-                name: "⏳ Asynchronous Programming",
-                description: "Developed hands-on experience with callbacks, Promises, and async/await to handle tasks like API calls, I/O, and timers. Studied how the event loop and microtask queue work under the hood to better manage async flows in JavaScript and write efficient non-blocking code."
-            }
-        ],
-        _id:"knowledge"
-    },
-    {
         topic: "AI / Machine Learning",
         skills: [
             {
                 name: "🤖 Machine Learning",
-                description: "Gained hands-on experience through practical courses like Zoomcamp, Simbolo, and Andrew Ng’s ML course. Worked on data preprocessing, model training, evaluation, and deployment using scikit-learn. Also explored MLOps fundamentals—like model tracking, reproducibility, and deployment workflows—through the Zoomcamp track."
+                description: "Gained hands-on experience through practical courses like DataTalks' Zoomcamp, Simbolo, and Andrew Ng’s ML courses. Worked on data preprocessing, model training, evaluation, and deployment using scikit-learn. Also explored MLOps fundamentals—like model tracking, reproducibility, and deployment workflows—through the DataTalks' track."
             },
             {
                 name: "🧠 AI Concepts",
@@ -112,8 +99,8 @@ export default function SkillShowCase(){
     return (<motion.div initial={{opacity: 0, y: 20}}
                  animate={{opacity: 1, y: 0}}
                  transition={{duration: 0.8, ease: 'easeInOut'}}>
-        <div className={" my-9 p-2 "}>
-            <div className="my-12 p-4">
+        <div className={" my-9 p-8 "}>
+            <div className="my-12">
                 <div className="text-lg  font-bold  text-gray-400 mb-2">
                     ⚙️Tools of the Trade
                 </div>
@@ -122,7 +109,7 @@ export default function SkillShowCase(){
                     Explore the Technologies I Work With
                 </div>
 
-                <div className="text-xs text-gray-500 leading-relaxed w-full">Throughout my journey, I’ve worked on various projects — these are the technologies and tools I've grown most confident in using. I'm constantly exploring new frameworks, refining my approach, and staying curious. While I’m proud of what I know, I’m even more excited about what I’ve yet to learn. My passion for growth drives me to keep pushing the boundaries of what I can build
+                <div className=" text-gray-700  dark:text-gray-300 leading-relaxed w-full text-justify">Throughout my journey, I’ve worked on various projects — these are the technologies and tools I've grown most confident in using. I'm constantly exploring new frameworks, refining my approach, and staying curious. While I’m proud of what I know, I’m even more excited about what I’ve yet to learn. My passion for growth drives me to keep pushing the boundaries of what I can build!
                 </div>
             </div>
 

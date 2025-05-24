@@ -34,13 +34,13 @@ const menuItems = [
         ],
     },
     {
-        label: "Projects",
+        label: "projects",
         content: [
             {type: "item", label: "ShowCases", link: `/projects`},
             {type: "separator"},
             {type: "item", label: "Development", link: `/projects/#category`},
             {type: "item", label: "AI / ML", link: `/projects/#category`},
-            {type: "item", label: "Academic Projects", link: `/projects/#category`},
+            {type: "item", label: "Academic projects", link: `/projects/#category`},
             {type: "separator"},
             {type: "item", label: "Learning Logs", link: `/projects/#category`},
         ],

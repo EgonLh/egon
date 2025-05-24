@@ -2,7 +2,7 @@
 import Introduction from "@/components/introduction/Introduction";
 import PersonalInformation from "@/components/education/PersonalInformation";
 import TopicMarquee from "@/components/theme&effects/Marquee";
-import ProjectShowCase from "@/components/Projects/ProjectShowCases";
+import ProjectShowCase from "@/components/projects/ProjectShowCases";
 import ContactMe from "@/components/contactme/Contactme";
 
 export default function Home() {

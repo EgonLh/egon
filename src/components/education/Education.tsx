@@ -44,9 +44,9 @@ const educationJourney = [
     },
 ]
 export default function EducationShowCase(){
-    return (<div className={"my-24 w-full"}>
+    return (<div className={"my-24 w-full space-y-4"}>
         {/* -- intro -- */}
-        <div className="mt-6 mb-12">
+        <div className="mt-6 p-8  ">
             <motion.div initial={{opacity: 0, y: 20}}
                            animate={{opacity: 1, y: 0}}
                            transition={{duration: 0.8, ease: 'easeInOut'}}
@@ -61,7 +61,7 @@ export default function EducationShowCase(){
 
             <motion.div  initial={{opacity: 0, y: 20}}
                   animate={{opacity: 1, y: 0}}
-                  transition={{duration: 0.8, ease: 'easeInOut'}} className="text-sm leading-relaxed dark:text-gray-300 text-base/8 text-justify">
+                  transition={{duration: 0.8, ease: 'easeInOut'}} className="text-sm  leading-relaxed text-gray-700  dark:text-gray-300 text-base/9 text-justify">
                 I earned my HNC and HND in Software Engineering, establishing a strong foundation in databases, networking, and software development principles.<br/>
                 I am currently pursuing a BSc in Computing at the University of Greenwich, strengthening my problem-solving mindset, technical skills, project management, and teamwork.
             </motion.div>

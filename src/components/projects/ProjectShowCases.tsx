@@ -48,7 +48,7 @@ export default function ProjectShowCase() {
                     <p className={"text-justify text-gray-600 dark:text-gray-400  hover:text-gray-800"}>A selection of projects I've built in pursuit of innovation and impact — my way of contributing to the world through technology.  Featured projects under the {topic} category.</p>
                 </div>
 
-                {/*--- Projects Filters ---*/}
+                {/*--- projects Filters ---*/}
                 <div className={" p-3 m-2 mb-4 rounded border  relative overflow-hidden "}>
                     <div className="absolute inset-0
                             bg-[radial-gradient(#a1a1aa_1.5px,transparent_0.5px)] bg-[size:20px_20px]
@@ -123,7 +123,7 @@ const ProjectShowCaseItem = ({data}) => {
         </motion.div>)
 }
 
-// AI/ML Projects
+// AI/ML projects
 const AIProjects = [
     {
         title: "Music Recommendation System",
@@ -145,7 +145,7 @@ const AIProjects = [
     },
 ]
 
-// Dev (Software Development) Projects
+// Dev (Software Development) projects
 const DevProjects = [
     {
         icon : "💿",
@@ -167,7 +167,7 @@ const DevProjects = [
     },
 ]
 
-// Academic Projects
+// Academic projects
 const AcademicProjects = [
     {
         icon:"🎥",
