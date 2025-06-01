@@ -136,12 +136,12 @@ const AIProjects = [
     },
     {
         icon : "📼",
-        title: "SoundScape WebApplication",
+        title: "HeartDisease Prediction API",
         description:
-            "Combines OCR and AI chatbot using TS, Redux, Next.js, and Express to deliver real-time, intelligent text recognition and interaction.",
-        readMore: "https://github.com/EgonLh/soundScape-web-app",
-        date: "March 5, 2024",
-        tag:["Typescript","Next.js","React.Js","Python","Tensorflow.py"]
+            "A machine learning model that predicts the likelihood of heart disease based on patient clinical data. It leverages a trained classifier, exposes a REST API with FastAPI, and logs prediction data for monitoring and versioning.",
+        readMore: "https://github.com/EgonLh/Heart-Disease-Prediction-API",
+        date: "May 1, 2025",
+        tag:["Python","FastAPI"]
     },
 ]
 
