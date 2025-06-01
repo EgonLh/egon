@@ -69,7 +69,7 @@ export default function EducationShowCase(){
 
         {/*Tool tips*/}
         <div className={"w-full w-5/6 text-end my-2 "}>
-            <TooltipProvider>
+            <TooltipProvider  delayDuration={300} skipDelayDuration={100}>
                 <Tooltip>
                     <TooltipTrigger><div className={"border rounded hover:bg-gray-100  transition-all duration-300 hover:dark:bg-gray-800"}>💭</div></TooltipTrigger>
                     <TooltipContent>

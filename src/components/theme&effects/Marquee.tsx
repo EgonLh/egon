@@ -18,9 +18,11 @@ export default function TopicMarquee() {
         >
             <div className="relative w-full overflow-hidden   h-32 my-24">
                 <div className="absolute top-1 right-1 text-xs font-semibold text-gray-800 dark:text-gray-200 z-10">
-                    <TooltipProvider>
+                    <TooltipProvider delayDuration={300} skipDelayDuration={100}>
                         <Tooltip>
-                            <TooltipTrigger><MessageSquareText className={"size-4 text-black/[0.4]"}/></TooltipTrigger>
+                            <TooltipTrigger>
+                                <MessageSquareText className="size-4 text-black/[0.4]" />
+                            </TooltipTrigger>
                             <TooltipContent>
                                 <p>Areas of Interest</p>
                             </TooltipContent>

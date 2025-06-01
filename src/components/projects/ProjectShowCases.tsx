@@ -1,5 +1,5 @@
 "use client"
-import {useState} from "react";
+import React, {useState} from "react";
 import {ChevronRight, CircleAlert} from "lucide-react";
 import Link from "next/link";
 import {motion} from "framer-motion";
@@ -56,7 +56,7 @@ export default function ProjectShowCase() {
                         opacity-40 pointer-events-none">
                     </div>
                     <div>
-                        <TooltipProvider>
+                        <TooltipProvider  delayDuration={300} skipDelayDuration={100}>
                             <Tooltip>
                                 <TooltipTrigger><CircleAlert className={"size-5"}/></TooltipTrigger>
                                 <TooltipContent>
