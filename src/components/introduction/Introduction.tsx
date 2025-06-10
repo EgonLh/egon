@@ -109,7 +109,9 @@ export default function Introduction() {
 
                             {/* --- cv download link */}
                             <a
-                                href="/assets/CV/CV.pdf"
+                            onClick={(e) => {
+                               e.preventDefault();
+                               alert("A revamped CV is in progress. Stay tuned!");}}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex ms-3 items-center border text-xs rounded px-2 p-1 hover:bg-gray-900 hover:dark:bg-gray-300/[0.1] hover:text-white transition-colors duration-300 ease-in-out "

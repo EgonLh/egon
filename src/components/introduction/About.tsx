@@ -56,7 +56,10 @@ export default function MyInfo() {
                                     transition={{duration: 0.8, ease: 'easeInOut'}}
                                     className={" hover:my-3 transition-all duration-300"}>
                             <a className={"p-1 text-gray-400 hover:text-cyan-400  rounded flex"}
-                               href="/assets/CV/CV.pdf"
+                              onClick={(e) => {
+                                    e.preventDefault();
+                                    alert("A revamped CV is in progress. Stay tuned!.");
+                                }}
                                target="_blank"><FileTerminal
                                 className={"text-gray-800 me-2 transition-all duration-300 hover:dark:text-gray-300"}/>View
                                 My CV</a>
@@ -132,8 +135,11 @@ export default function MyInfo() {
                                 animate={{opacity: 1, y: 0}}
                                 transition={{duration: 0.8, ease: 'easeInOut'}}
                                 className={" hover:my-3 mt-3 transition-all duration-300"}>
-                        <a className={"text-gray-400 hover:text-cyan-400  rounded flex"} href="/assets/CV/CV.pdf"
-                           target="_blank" ><FileTerminal
+                        <a className={"text-gray-400 hover:text-cyan-400  rounded flex"} onClick={(e) => {
+                               e.preventDefault();
+                               alert("A revamped CV is in progress. Stay tuned!");
+                           }}
+                           ><FileTerminal
                             className={"text-gray-800 me-2 transition-all duration-300 hover:dark:text-gray-300"}/>View
                             My CV</a>
                     </motion.div>
