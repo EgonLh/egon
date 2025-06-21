@@ -34,7 +34,7 @@ const menuItems = [
         ],
     },
     {
-        label: "projects",
+        label: "Projects",
         content: [
             {type: "item", label: "ShowCases", link: `/projects`},
             {type: "separator"},
